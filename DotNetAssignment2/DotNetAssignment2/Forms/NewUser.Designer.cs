@@ -204,7 +204,9 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Name = "NewUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New User";
+            this.Load += new System.EventHandler(this.NewUser_Load);
             this.gbDoB.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

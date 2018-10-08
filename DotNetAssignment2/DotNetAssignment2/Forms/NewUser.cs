@@ -16,5 +16,10 @@ namespace DotNetAssignment2
         {
             InitializeComponent();
         }
+        public event EventHandler Closed;
+        private void NewUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
