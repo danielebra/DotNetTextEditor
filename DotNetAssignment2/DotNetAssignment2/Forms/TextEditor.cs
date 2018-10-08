@@ -14,11 +14,12 @@ namespace DotNetAssignment2
     public partial class TextEditor : Form
     {
         public User UserInstance { get; set; }
+        private string fontName = "Microsoft Sans Serif";
         public TextEditor()
         {
             InitializeComponent();
         }
-        
+
         public TextEditor(User user)
         {
             InitializeComponent();
@@ -28,12 +29,26 @@ namespace DotNetAssignment2
         private void TextEditor_Load(object sender, EventArgs e)
         {
             handleUserPerception();
+            populateFontSizes();
         }
 
         private void handleUserPerception()
         {
             rtbText.ReadOnly = !UserInstance.canEdit;
             tslblUsername.Text = "Username: " + UserInstance.Username;
+        }
+
+        private void populateFontSizes()
+        {
+            for (int i = 8; i <= 20; i++)
+            {
+                tscbFontSize.Items.Add(i);
+            }
+        }
+
+        private void tscbFontSize_TextChanged(object sender, EventArgs e)
+        {
+            rtbText.SelectionFont = new Font(this.fontName, float.Parse(tscbFontSize.Text));
         }
     }
 }

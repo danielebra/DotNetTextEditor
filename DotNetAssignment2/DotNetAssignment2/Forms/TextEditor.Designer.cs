@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextEditor));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -261,6 +262,9 @@
             // 
             this.tscbFontSize.Name = "tscbFontSize";
             this.tscbFontSize.Size = new System.Drawing.Size(121, 25);
+            this.tscbFontSize.Text = "Font Size";
+            this.tscbFontSize.ToolTipText = "Font Size";
+            this.tscbFontSize.TextChanged += new System.EventHandler(this.tscbFontSize_TextChanged);
             // 
             // tsbtnHelp
             // 
@@ -329,7 +333,7 @@
             this.rtbText.Name = "rtbText";
             this.rtbText.Size = new System.Drawing.Size(463, 455);
             this.rtbText.TabIndex = 0;
-            this.rtbText.Text = "";
+            this.rtbText.Text = resources.GetString("rtbText.Text");
             // 
             // TextEditor
             // 
