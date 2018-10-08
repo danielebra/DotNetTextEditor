@@ -38,15 +38,22 @@ namespace DotNetAssignment2
         {
             if (authentication.areCredentialsValid(tbUsername.Text, tbPassword.Text))
             {
-                TextEditor textEditor = new TextEditor();
+                User user = this.state.Users.Where(u => string.Equals(u.Username, tbUsername.Text)).FirstOrDefault();
+                TextEditor textEditor = new TextEditor(user);
                 textEditor.FormClosing += ShowLoginScreen;
                 textEditor.Show();
+                clearInputFields();
                 this.Hide();
             }
             else
                 MessageBox.Show("Please check that your credentials are correct", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
-
+        private void clearInputFields()
+        {
+            tbUsername.Text = String.Empty;
+            tbPassword.Text = String.Empty;
+            tbUsername.Focus();
+        }
         private void ShowLoginScreen(object sender, FormClosingEventArgs e)
         {
             this.Show();
