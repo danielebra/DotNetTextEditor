@@ -65,5 +65,22 @@ namespace DotNetAssignment2
         {
             rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Underline);
         }
+
+        private void tsbtnCut_Click(object sender, EventArgs e)
+        {
+            tsbtnCopy_Click(this, null);
+            rtbText.SelectedText = string.Empty;
+        }
+
+        private void tsbtnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(rtbText.SelectedRtf, TextDataFormat.Rtf);
+        }
+
+        private void tsbtnPaste_Click(object sender, EventArgs e)
+        {
+            //rtbText.SelectionLength = 0;
+            rtbText.SelectedRtf = Clipboard.GetText(TextDataFormat.Rtf);
+        }
     }
 }

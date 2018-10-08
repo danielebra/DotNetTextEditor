@@ -37,9 +37,9 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnCut = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmbtnCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPaste = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsTop = new System.Windows.Forms.ToolStrip();
@@ -93,67 +93,70 @@
             // 
             this.newToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.NewFile_16x;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.OpenFolder_16x;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.Save_16x;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.SaveAs_16x;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.ShutDown_16x;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cutToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem});
+            this.tsmbtnCut,
+            this.tsmbtnCopy,
+            this.tsmPaste});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
-            // cutToolStripMenuItem
+            // tsmbtnCut
             // 
-            this.cutToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.Cut_16x;
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.cutToolStripMenuItem.Text = "Cut";
+            this.tsmbtnCut.Image = global::DotNetAssignment2.Properties.Resources.Cut_16x;
+            this.tsmbtnCut.Name = "tsmbtnCut";
+            this.tsmbtnCut.Size = new System.Drawing.Size(152, 22);
+            this.tsmbtnCut.Text = "Cut";
+            this.tsmbtnCut.Click += new System.EventHandler(this.tsbtnCut_Click);
             // 
-            // copyToolStripMenuItem
+            // tsmbtnCopy
             // 
-            this.copyToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.Copy_16x;
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.tsmbtnCopy.Image = global::DotNetAssignment2.Properties.Resources.Copy_16x;
+            this.tsmbtnCopy.Name = "tsmbtnCopy";
+            this.tsmbtnCopy.Size = new System.Drawing.Size(152, 22);
+            this.tsmbtnCopy.Text = "Copy";
+            this.tsmbtnCopy.Click += new System.EventHandler(this.tsbtnCopy_Click);
             // 
-            // pasteToolStripMenuItem
+            // tsmPaste
             // 
-            this.pasteToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.Paste_16x;
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
+            this.tsmPaste.Image = global::DotNetAssignment2.Properties.Resources.Paste_16x;
+            this.tsmPaste.Name = "tsmPaste";
+            this.tsmPaste.Size = new System.Drawing.Size(152, 22);
+            this.tsmPaste.Text = "Paste";
+            this.tsmPaste.Click += new System.EventHandler(this.tsbtnPaste_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -166,7 +169,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             // 
             // tsTop
@@ -310,6 +313,7 @@
             this.tsbtnCut.Name = "tsbtnCut";
             this.tsbtnCut.Size = new System.Drawing.Size(21, 20);
             this.tsbtnCut.Text = "Cut";
+            this.tsbtnCut.Click += new System.EventHandler(this.tsbtnCut_Click);
             // 
             // tsbtnCopy
             // 
@@ -319,6 +323,7 @@
             this.tsbtnCopy.Name = "tsbtnCopy";
             this.tsbtnCopy.Size = new System.Drawing.Size(21, 20);
             this.tsbtnCopy.Text = "Copy";
+            this.tsbtnCopy.Click += new System.EventHandler(this.tsbtnCopy_Click);
             // 
             // tsbtnPaste
             // 
@@ -328,6 +333,7 @@
             this.tsbtnPaste.Name = "tsbtnPaste";
             this.tsbtnPaste.Size = new System.Drawing.Size(21, 20);
             this.tsbtnPaste.Text = "Paste";
+            this.tsbtnPaste.Click += new System.EventHandler(this.tsbtnPaste_Click);
             // 
             // rtbText
             // 
@@ -373,9 +379,9 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnCut;
+        private System.Windows.Forms.ToolStripMenuItem tsmbtnCopy;
+        private System.Windows.Forms.ToolStripMenuItem tsmPaste;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStrip tsTop;
