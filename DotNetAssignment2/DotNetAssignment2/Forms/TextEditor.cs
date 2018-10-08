@@ -14,6 +14,7 @@ namespace DotNetAssignment2
     public partial class TextEditor : Form
     {
         public User UserInstance { get; set; }
+        private RichTextBoxManipulator rtbManipulator;
         private string fontName = "Microsoft Sans Serif";
         public TextEditor()
         {
@@ -30,6 +31,7 @@ namespace DotNetAssignment2
         {
             handleUserPerception();
             populateFontSizes();
+            rtbManipulator = new RichTextBoxManipulator(ref rtbText);
         }
 
         private void handleUserPerception()
@@ -48,39 +50,37 @@ namespace DotNetAssignment2
 
         private void tscbFontSize_TextChanged(object sender, EventArgs e)
         {
-            rtbText.SelectionFont = new Font(this.fontName, float.Parse(tscbFontSize.Text));
+            rtbManipulator.ChangeSelectionFontSize(float.Parse(tscbFontSize.Text));
         }
 
         private void tsbtnBold_Click(object sender, EventArgs e)
         {
-            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Bold);
+            rtbManipulator.BoldSelection();
         }
 
         private void tsbtnItalics_Click(object sender, EventArgs e)
         {
-            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Italic);
+            rtbManipulator.ItalicizeSelection();
         }
 
         private void tsbtnUnderline_Click(object sender, EventArgs e)
         {
-            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Underline);
+            rtbManipulator.UnderlineSelection();
         }
 
         private void tsbtnCut_Click(object sender, EventArgs e)
         {
-            tsbtnCopy_Click(this, null);
-            rtbText.SelectedText = string.Empty;
+            rtbManipulator.Cut();
         }
 
         private void tsbtnCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(rtbText.SelectedRtf, TextDataFormat.Rtf);
+            rtbManipulator.Copy();
         }
 
         private void tsbtnPaste_Click(object sender, EventArgs e)
         {
-            //rtbText.SelectionLength = 0;
-            rtbText.SelectedRtf = Clipboard.GetText(TextDataFormat.Rtf);
+            rtbManipulator.Paste();
         }
     }
 }

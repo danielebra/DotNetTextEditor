@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
     <Compile Include="Classes\FileManipulator.cs" />
+    <Compile Include="Classes\RichTextBoxManipulator.cs" />
     <Compile Include="Classes\State.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Forms\LoginScreen.cs">
