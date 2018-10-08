@@ -50,5 +50,20 @@ namespace DotNetAssignment2
         {
             rtbText.SelectionFont = new Font(this.fontName, float.Parse(tscbFontSize.Text));
         }
+
+        private void tsbtnBold_Click(object sender, EventArgs e)
+        {
+            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Bold);
+        }
+
+        private void tsbtnItalics_Click(object sender, EventArgs e)
+        {
+            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Italic);
+        }
+
+        private void tsbtnUnderline_Click(object sender, EventArgs e)
+        {
+            rtbText.SelectionFont = new Font(rtbText.SelectionFont, FontStyle.Underline);
+        }
     }
 }

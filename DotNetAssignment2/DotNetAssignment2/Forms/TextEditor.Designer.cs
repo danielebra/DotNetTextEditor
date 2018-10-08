@@ -239,6 +239,7 @@
             this.tsbtnBold.Name = "tsbtnBold";
             this.tsbtnBold.Size = new System.Drawing.Size(23, 22);
             this.tsbtnBold.Text = "Bold";
+            this.tsbtnBold.Click += new System.EventHandler(this.tsbtnBold_Click);
             // 
             // tsbtnItalics
             // 
@@ -248,6 +249,7 @@
             this.tsbtnItalics.Name = "tsbtnItalics";
             this.tsbtnItalics.Size = new System.Drawing.Size(23, 22);
             this.tsbtnItalics.Text = "Italics";
+            this.tsbtnItalics.Click += new System.EventHandler(this.tsbtnItalics_Click);
             // 
             // tsbtnUnderline
             // 
@@ -257,6 +259,7 @@
             this.tsbtnUnderline.Name = "tsbtnUnderline";
             this.tsbtnUnderline.Size = new System.Drawing.Size(23, 22);
             this.tsbtnUnderline.Text = "Underline";
+            this.tsbtnUnderline.Click += new System.EventHandler(this.tsbtnUnderline_Click);
             // 
             // tscbFontSize
             // 
