@@ -21,6 +21,15 @@ namespace DotNetAssignment2.Classes
                 userList.Add(CreateUserFromString(line));
             return userList;
         }
+        public void WriteUserDetails(List<User> users)
+        {
+            List<String> userDetailList = new List<string>();
+            foreach (User user in users)
+            {
+                userDetailList.Add(user.ToString());
+            }
+            File.WriteAllLines(this.filePath, userDetailList);
+        }
         private User CreateUserFromString(string userString)
         {
             User user = new User();

@@ -33,6 +33,15 @@ namespace DotNetAssignment2.Classes
             this.LastName = lastName;
             this.DateOfBirth = dateOfBirth;
         }
+        public override string ToString()
+        {
+            return string.Format("{0},{1},{2},{3},{4},{5}", 
+                            this.Username, this.Password,
+                            this.canEdit ? User.EditMode : User.ViewMode,
+                            this.FirstName, this.LastName, 
+                            string.Format("{0}-{1}-{2}", this.DateOfBirth.Day, 
+                            this.DateOfBirth.Month, this.DateOfBirth.Year));
+        }
     }
     
 }

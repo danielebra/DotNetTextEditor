@@ -67,5 +67,10 @@ namespace DotNetAssignment2
             newUserScreen.Show();
             this.Hide();
         }
+
+        private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            fileManipulator.WriteUserDetails(this.state.Users);
+        }
     }
 }
