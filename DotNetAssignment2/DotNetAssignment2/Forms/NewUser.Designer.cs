@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewUser));
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbPasswordConfirm = new System.Windows.Forms.TextBox();
@@ -91,6 +92,7 @@
             // 
             // cbUserType
             // 
+            this.cbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUserType.FormattingEnabled = true;
             this.cbUserType.Location = new System.Drawing.Point(73, 176);
             this.cbUserType.Name = "cbUserType";
@@ -107,6 +109,7 @@
             this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnCancel
             // 
@@ -203,6 +206,7 @@
             this.Controls.Add(this.tbPasswordConfirm);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New User";

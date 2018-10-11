@@ -64,8 +64,15 @@ namespace DotNetAssignment2
             NewUser newUserScreen = new NewUser();
             // Make this form reappear when the new one is closed
             newUserScreen.FormClosing += ShowLoginScreen;
+            //newUserScreen.AccountCreated += NewUserScreen_AccountCreated;
             newUserScreen.Show();
             this.Hide();
+        }
+
+        private void NewUserScreen_AccountCreated(object sender, EventArgs e)
+        {
+            state.Users.Add(((AccountCreatedArgs)e).User);
+            fileManipulator.WriteUserDetails(state.Users);
         }
 
         private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
