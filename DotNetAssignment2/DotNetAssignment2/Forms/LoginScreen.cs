@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DotNetAssignment2.Classes;
+using static DotNetAssignment2.Classes.CustomEventArgs;
+
 namespace DotNetAssignment2
 {
     public partial class LoginScreen : Form
@@ -64,7 +66,7 @@ namespace DotNetAssignment2
             NewUser newUserScreen = new NewUser();
             // Make this form reappear when the new one is closed
             newUserScreen.FormClosing += ShowLoginScreen;
-            //newUserScreen.AccountCreated += NewUserScreen_AccountCreated;
+            newUserScreen.AccountCreated += NewUserScreen_AccountCreated;
             newUserScreen.Show();
             this.Hide();
         }

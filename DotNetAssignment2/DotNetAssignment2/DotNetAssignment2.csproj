@@ -49,10 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Authentication.cs" />
+    <Compile Include="Classes\CustomEventArgs.cs" />
+    <Compile Include="Classes\Exceptions.cs" />
     <Compile Include="Classes\FileManipulator.cs" />
     <Compile Include="Classes\RichTextBoxManipulator.cs" />
     <Compile Include="Classes\State.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Classes\Utils.cs" />
     <Compile Include="Forms\LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
