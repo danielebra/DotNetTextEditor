@@ -60,6 +60,8 @@
             this.tsbtnCopy = new System.Windows.Forms.ToolStripButton();
             this.tsbtnPaste = new System.Windows.Forms.ToolStripButton();
             this.rtbText = new System.Windows.Forms.RichTextBox();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tsTop.SuspendLayout();
             this.tsLeft.SuspendLayout();
@@ -138,7 +140,7 @@
             // 
             this.tsmbtnCut.Image = global::DotNetAssignment2.Properties.Resources.Cut_16x;
             this.tsmbtnCut.Name = "tsmbtnCut";
-            this.tsmbtnCut.Size = new System.Drawing.Size(152, 22);
+            this.tsmbtnCut.Size = new System.Drawing.Size(102, 22);
             this.tsmbtnCut.Text = "Cut";
             this.tsmbtnCut.Click += new System.EventHandler(this.tsbtnCut_Click);
             // 
@@ -146,7 +148,7 @@
             // 
             this.tsmbtnCopy.Image = global::DotNetAssignment2.Properties.Resources.Copy_16x;
             this.tsmbtnCopy.Name = "tsmbtnCopy";
-            this.tsmbtnCopy.Size = new System.Drawing.Size(152, 22);
+            this.tsmbtnCopy.Size = new System.Drawing.Size(102, 22);
             this.tsmbtnCopy.Text = "Copy";
             this.tsmbtnCopy.Click += new System.EventHandler(this.tsbtnCopy_Click);
             // 
@@ -154,7 +156,7 @@
             // 
             this.tsmPaste.Image = global::DotNetAssignment2.Properties.Resources.Paste_16x;
             this.tsmPaste.Name = "tsmPaste";
-            this.tsmPaste.Size = new System.Drawing.Size(152, 22);
+            this.tsmPaste.Size = new System.Drawing.Size(102, 22);
             this.tsmPaste.Text = "Paste";
             this.tsmPaste.Click += new System.EventHandler(this.tsbtnPaste_Click);
             // 
@@ -169,7 +171,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About...";
             // 
             // tsTop
@@ -210,6 +212,7 @@
             this.tsbtnOpen.Name = "tsbtnOpen";
             this.tsbtnOpen.Size = new System.Drawing.Size(23, 22);
             this.tsbtnOpen.Text = "Open";
+            this.tsbtnOpen.Click += new System.EventHandler(this.tsbtnOpen_Click);
             // 
             // tsbtnSave
             // 
@@ -228,6 +231,7 @@
             this.tsbtnSaveAs.Name = "tsbtnSaveAs";
             this.tsbtnSaveAs.Size = new System.Drawing.Size(23, 22);
             this.tsbtnSaveAs.Text = "Save As";
+            this.tsbtnSaveAs.Click += new System.EventHandler(this.tsbtnSaveAs_Click);
             // 
             // toolStripSeparator1
             // 
@@ -344,6 +348,15 @@
             this.rtbText.TabIndex = 0;
             this.rtbText.Text = resources.GetString("rtbText.Text");
             // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
+            this.ofd.Filter = "Rich Text File|*.rtf";
+            // 
+            // sfd
+            // 
+            this.sfd.Filter = "Rich Text File|*.rtf";
+            // 
             // TextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,5 +416,7 @@
         private System.Windows.Forms.ToolStripButton tsbtnCut;
         private System.Windows.Forms.ToolStripButton tsbtnCopy;
         private System.Windows.Forms.ToolStripButton tsbtnPaste;
+        private System.Windows.Forms.OpenFileDialog ofd;
+        private System.Windows.Forms.SaveFileDialog sfd;
     }
 }

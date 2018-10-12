@@ -53,6 +53,7 @@
     <Compile Include="Classes\Exceptions.cs" />
     <Compile Include="Classes\FileManipulator.cs" />
     <Compile Include="Classes\RichTextBoxManipulator.cs" />
+    <Compile Include="Classes\RtfFile.cs" />
     <Compile Include="Classes\State.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utils.cs" />

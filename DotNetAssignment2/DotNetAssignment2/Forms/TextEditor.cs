@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,25 @@ namespace DotNetAssignment2
         private void tsbtnPaste_Click(object sender, EventArgs e)
         {
             rtbManipulator.Paste();
+        }
+
+        private void tsbtnSaveAs_Click(object sender, EventArgs e)
+        {
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(sfd.FileName, rtbText.Rtf);
+            }
+        }
+
+        private void tsbtnOpen_Click(object sender, EventArgs e)
+        {
+            RtfFile rtfFile = new RtfFile();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                rtfFile.FilePath = ofd.FileName;
+                rtfFile.Contents = File.ReadAllText(ofd.FileName);
+                rtbText.Rtf = rtfFile.Contents;
+            }
         }
     }
 }

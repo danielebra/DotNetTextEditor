@@ -12,7 +12,7 @@ namespace DotNetAssignment2.Classes
         private string filePath { get; set; }
         public FileManipulator(string path)
         {
-            this.filePath = path;
+            this.filePath = path;  
         }
         public List<User> GetAllUserDetails()
         {

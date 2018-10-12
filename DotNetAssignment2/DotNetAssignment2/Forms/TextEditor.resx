@@ -129,6 +129,12 @@
   <data name="rtbText.Text" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius massa quis fringilla vulputate. Suspendisse suscipit eu justo non aliquet. Nullam ac dui sit amet lacus ornare dapibus nec eu lacus. Etiam a nisi at dolor commodo convallis eu consequat elit. Quisque mattis pretium ante, ac venenatis elit condimentum vel. Morbi lacinia malesuada eros, eget dapibus lorem venenatis ultricies. Sed eget mauris nec enim euismod elementum sit amet a ante.</value>
   </data>
+  <metadata name="ofd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>318, 17</value>
+  </metadata>
+  <metadata name="sfd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>388, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
