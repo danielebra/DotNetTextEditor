@@ -16,7 +16,7 @@ namespace DotNetAssignment2
     {
         public User UserInstance { get; set; }
         private RichTextBoxManipulator rtbManipulator;
-        private string fontName = "Microsoft Sans Serif";
+        private RtfFile rtfFile = new RtfFile();
         public TextEditor()
         {
             InitializeComponent();
@@ -88,19 +88,37 @@ namespace DotNetAssignment2
         {
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(sfd.FileName, rtbText.Rtf);
+                rtfFile.FilePath = sfd.FileName;
+                rtfFile.Save();
             }
         }
 
         private void tsbtnOpen_Click(object sender, EventArgs e)
         {
-            RtfFile rtfFile = new RtfFile();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 rtfFile.FilePath = ofd.FileName;
                 rtfFile.Contents = File.ReadAllText(ofd.FileName);
                 rtbText.Rtf = rtfFile.Contents;
             }
+        }
+
+        private void tsbtnSave_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(rtfFile.FilePath))
+            {
+                rtfFile.Save();
+            }
+            else
+            {
+                tsbtnSaveAs_Click(this, null);
+            }
+
+        }
+
+        private void rtbText_TextChanged(object sender, EventArgs e)
+        {
+            rtfFile.Contents = rtbText.Rtf;
         }
     }
 }

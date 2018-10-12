@@ -112,6 +112,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.tsbtnSave_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -224,6 +225,7 @@
             this.tsbtnSave.Name = "tsbtnSave";
             this.tsbtnSave.Size = new System.Drawing.Size(23, 22);
             this.tsbtnSave.Text = "Save";
+            this.tsbtnSave.Click += new System.EventHandler(this.tsbtnSave_Click);
             // 
             // tsbtnSaveAs
             // 
@@ -349,6 +351,7 @@
             this.rtbText.Size = new System.Drawing.Size(463, 455);
             this.rtbText.TabIndex = 0;
             this.rtbText.Text = resources.GetString("rtbText.Text");
+            this.rtbText.TextChanged += new System.EventHandler(this.rtbText_TextChanged);
             // 
             // ofd
             // 
