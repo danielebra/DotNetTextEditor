@@ -61,6 +61,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 1;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // tbPasswordConfirm
             // 
@@ -68,6 +69,7 @@
             this.tbPasswordConfirm.Name = "tbPasswordConfirm";
             this.tbPasswordConfirm.Size = new System.Drawing.Size(100, 20);
             this.tbPasswordConfirm.TabIndex = 2;
+            this.tbPasswordConfirm.UseSystemPasswordChar = true;
             // 
             // tbFirstName
             // 
