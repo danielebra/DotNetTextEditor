@@ -132,5 +132,11 @@ namespace DotNetAssignment2
         {
             this.Close();
         }
+
+        private void tsbtnNew_Click(object sender, EventArgs e)
+        {
+            rtfFile = new RtfFile();
+            rtbText.Rtf = string.Empty;
+        }
     }
 }
