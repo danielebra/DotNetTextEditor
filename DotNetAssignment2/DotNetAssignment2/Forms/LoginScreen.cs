@@ -17,9 +17,11 @@ namespace DotNetAssignment2
         State state;
         FileManipulator fileManipulator;
         Authentication authentication;
+
         public LoginScreen()
         {
             InitializeComponent();
+            // Create instances of important objects
             state = new State();
             fileManipulator = new FileManipulator("login.txt");
             authentication = new Authentication(ref state);
@@ -28,7 +30,15 @@ namespace DotNetAssignment2
         private void LoginScreen_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btnLogin;
-            state.Users = fileManipulator.GetAllUserDetails();
+            // Load users from the account file into the system
+            try
+            {
+                state.Users = fileManipulator.GetAllUserDetails();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error loading user accounts", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,10 +50,13 @@ namespace DotNetAssignment2
         {
             if (authentication.areCredentialsValid(tbUsername.Text, tbPassword.Text))
             {
+                // Match a user by Username to a User object
                 User user = this.state.Users.Where(u => string.Equals(u.Username, tbUsername.Text)).FirstOrDefault();
+                // Pass the user object to the TextEditor screen
                 TextEditor textEditor = new TextEditor(user);
                 textEditor.FormClosing += ShowLoginScreen;
                 textEditor.Show();
+                // Clear text fields
                 clearInputFields();
                 this.Hide();
             }
@@ -66,6 +79,7 @@ namespace DotNetAssignment2
             NewUser newUserScreen = new NewUser();
             // Make this form reappear when the new one is closed
             newUserScreen.FormClosing += ShowLoginScreen;
+            // Add the new account to state
             newUserScreen.AccountCreated += NewUserScreen_AccountCreated;
             newUserScreen.Show();
             this.Hide();
@@ -73,12 +87,14 @@ namespace DotNetAssignment2
 
         private void NewUserScreen_AccountCreated(object sender, EventArgs e)
         {
+            // Event is triggede when a new account is created from the NewUserScreen
             state.Users.Add(((AccountCreatedArgs)e).User);
             fileManipulator.WriteUserDetails(state.Users);
         }
 
         private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Write accounts to file when login screen is closed
             fileManipulator.WriteUserDetails(this.state.Users);
         }
     }

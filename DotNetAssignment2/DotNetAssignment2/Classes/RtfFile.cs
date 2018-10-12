@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace DotNetAssignment2.Classes
 {
-    class RtfFile
+    struct RtfFile
     {
+        // Rtf file data type to handle saving
         public string Contents { get; set; }
         public string FilePath { get; set; }
 

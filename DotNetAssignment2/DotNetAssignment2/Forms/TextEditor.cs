@@ -18,11 +18,13 @@ namespace DotNetAssignment2
         public User UserInstance { get; set; }
         private RichTextBoxManipulator rtbManipulator;
         private RtfFile rtfFile = new RtfFile();
+
         public TextEditor()
         {
             InitializeComponent();
         }
-
+        // Retrieve a user instanse so approriate decisions can be made
+        // Such as: displaying username and enabling or disabling editing
         public TextEditor(User user)
         {
             InitializeComponent();
@@ -33,17 +35,21 @@ namespace DotNetAssignment2
         {
             handleUserPerception();
             populateFontSizes();
+            // Connect the rich text box to the RichTextBoxManipulator
             rtbManipulator = new RichTextBoxManipulator(ref rtbText);
         }
 
         private void handleUserPerception()
         {
+            // Handle edit mode
             rtbText.ReadOnly = !UserInstance.canEdit;
+            // Display username
             tslblUsername.Text = "Username: " + UserInstance.Username;
         }
 
         private void populateFontSizes()
         {
+            // Create items in the combo box for font sizes
             for (int i = 8; i <= 20; i++)
             {
                 tscbFontSize.Items.Add(i);
@@ -89,6 +95,7 @@ namespace DotNetAssignment2
         {
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+                // Update file path to the results of the dialog box
                 rtfFile.FilePath = sfd.FileName;
                 rtfFile.Save();
             }
@@ -98,6 +105,7 @@ namespace DotNetAssignment2
         {
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                // Load contents of rtf file into the system
                 rtfFile.FilePath = ofd.FileName;
                 rtfFile.Contents = File.ReadAllText(ofd.FileName);
                 rtbText.Rtf = rtfFile.Contents;
@@ -106,12 +114,14 @@ namespace DotNetAssignment2
 
         private void tsbtnSave_Click(object sender, EventArgs e)
         {
+            // Check if we know where we can save the file
             if (!String.IsNullOrEmpty(rtfFile.FilePath))
             {
                 rtfFile.Save();
             }
             else
             {
+                // We don't know where to save the file, so execute the Save As process
                 tsbtnSaveAs_Click(this, null);
             }
 
@@ -119,11 +129,13 @@ namespace DotNetAssignment2
 
         private void rtbText_TextChanged(object sender, EventArgs e)
         {
+            // Keep the rtfFile in sync with the interface
             rtfFile.Contents = rtbText.Rtf;
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Show the About page
             About about = new About();
             about.Show();
         }
@@ -135,6 +147,7 @@ namespace DotNetAssignment2
 
         private void tsbtnNew_Click(object sender, EventArgs e)
         {
+            // Clear the editor
             rtfFile = new RtfFile();
             rtbText.Rtf = string.Empty;
         }

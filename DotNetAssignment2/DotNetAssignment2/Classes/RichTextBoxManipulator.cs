@@ -11,15 +11,15 @@ namespace DotNetAssignment2.Classes
     public class RichTextBoxManipulator
     {
         private RichTextBox targetRtb;
+        // Pass through a reference to a RichTextBox in order to perform accurate updates
         public RichTextBoxManipulator(ref RichTextBox rtb)
         {
             targetRtb = rtb;
         }
-
+        // Basic text manipulation methods
         public void Copy()
         {
             Clipboard.SetText(targetRtb.SelectedRtf, TextDataFormat.Rtf);
-
         }
         public void Cut()
         {
@@ -38,12 +38,10 @@ namespace DotNetAssignment2.Classes
         public void ItalicizeSelection()
         {
             targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, FontStyle.Italic);
-
         }
         public void UnderlineSelection()
         {
             targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, FontStyle.Underline);
-
         }
         public void ChangeSelectionFontSize(float size)
         {

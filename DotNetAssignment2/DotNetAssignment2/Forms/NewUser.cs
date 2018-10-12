@@ -45,13 +45,16 @@ namespace DotNetAssignment2
             {
                 if (isFormCompleted())
                 {
+                    // Fire event to indicate an account has been created
                     AccountCreated?.Invoke(this, new AccountCreatedArgs(createUserFromForm()));
+                    // Notify the user of new changes
                     MessageBox.Show(string.Format("Account created for {0} {1}", tbFirstName.Text, tbLastName.Text), 
                         "Successfully created account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
+                // Notify the user that there were issues when creating the account
                 MessageBox.Show(ex.Message, "Unable to create account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
@@ -74,6 +77,7 @@ namespace DotNetAssignment2
 
         private User createUserFromForm()
         {
+            // Gather information from interface and build it as a User object
             User user = new User();
             
             user.Username = tbUsername.Text;

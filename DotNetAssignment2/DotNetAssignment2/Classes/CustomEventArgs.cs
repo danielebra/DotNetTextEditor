@@ -8,6 +8,7 @@ namespace DotNetAssignment2.Classes
 {
     class CustomEventArgs
     {
+        // Custom arguments to pass to an event handler that contains a User object
         public class AccountCreatedArgs : EventArgs
         {
             public AccountCreatedArgs(User user)
