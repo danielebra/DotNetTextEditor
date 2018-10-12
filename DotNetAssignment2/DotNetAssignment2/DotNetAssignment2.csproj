@@ -7,7 +7,7 @@
     <ProjectGuid>{BE5C2947-F91C-4B46-AEB7-4EC34F77155E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DotNetAssignment2</RootNamespace>
-    <AssemblyName>DotNetAssignment2</AssemblyName>
+    <AssemblyName>Rich Text File Editor</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -57,6 +57,12 @@
     <Compile Include="Classes\State.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\Utils.cs" />
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Forms\TextEditor.Designer.cs">
       <DependentUpon>TextEditor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Goescat-Macaron-Text-editor.ico" />
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

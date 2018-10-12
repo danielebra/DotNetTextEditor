@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DotNetAssignment2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Rich Text File Editor")]
+[assembly: AssemblyDescription("This is a tool to make quick edits to a file in the Rich Text File (rtf) format. This software has been created for the Application Development in .NET subject by Daniel Ebrahimian")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DotNetAssignment2")]
+[assembly: AssemblyCompany("Daniel Ebrahimian")]
+[assembly: AssemblyProduct("Rich Text File Editor")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

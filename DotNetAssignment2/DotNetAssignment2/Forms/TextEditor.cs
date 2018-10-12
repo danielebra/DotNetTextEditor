@@ -1,4 +1,5 @@
 ﻿using DotNetAssignment2.Classes;
+using DotNetAssignment2.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,6 +120,17 @@ namespace DotNetAssignment2
         private void rtbText_TextChanged(object sender, EventArgs e)
         {
             rtfFile.Contents = rtbText.Rtf;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
