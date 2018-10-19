@@ -33,15 +33,15 @@ namespace DotNetAssignment2.Classes
         }
         public void BoldSelection()
         {
-            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, FontStyle.Bold);
+            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, targetRtb.SelectionFont.Style ^ FontStyle.Bold);
         }
         public void ItalicizeSelection()
         {
-            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, FontStyle.Italic);
+            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, targetRtb.SelectionFont.Style ^ FontStyle.Italic);
         }
         public void UnderlineSelection()
         {
-            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, FontStyle.Underline);
+            targetRtb.SelectionFont = new Font(targetRtb.SelectionFont, targetRtb.SelectionFont.Style ^ FontStyle.Underline);
         }
         public void ChangeSelectionFontSize(float size)
         {
