@@ -74,7 +74,7 @@ namespace DotNetAssignment2
             handleUserPerception();
             populateFontSizes();
             // Connect the rich text box to the RichTextBoxManipulator
-            rtbManipulator = new RichTextBoxManipulator(ref rtbText);
+            rtbManipulator = new RichTextBoxManipulator(ref rtbText, this.UserInstance.canEdit);
         }
 
         private void handleUserPerception()
@@ -143,10 +143,17 @@ namespace DotNetAssignment2
         {
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                // Load contents of rtf file into the system
-                rtfFile.FilePath = ofd.FileName;
-                rtfFile.Contents = File.ReadAllText(ofd.FileName);
-                rtbText.Rtf = rtfFile.Contents;
+                try
+                {
+                    // Load contents of rtf file into the system
+                    rtfFile.FilePath = ofd.FileName;
+                    rtfFile.Contents = File.ReadAllText(ofd.FileName);
+                    rtbText.Rtf = rtfFile.Contents;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error loading file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -180,12 +187,8 @@ namespace DotNetAssignment2
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Ask the user to confirm that they should be logged out
-            if (MessageBox.Show("Are you sure you want to logout?", "Confirm Logging Out",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
+
+            this.Close();
         }
 
         private void tsbtnNew_Click(object sender, EventArgs e)
@@ -197,6 +200,16 @@ namespace DotNetAssignment2
                 // Clear the editor
                 rtfFile = new RtfFile();
                 rtbText.Rtf = string.Empty;
+            }
+        }
+
+        private void TextEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Ask the user to confirm before closing
+            if (MessageBox.Show("Are you sure you want to logout?", "Confirm Logging Out",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                e.Cancel = true;
             }
         }
     }

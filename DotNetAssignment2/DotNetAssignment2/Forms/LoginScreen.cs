@@ -54,7 +54,7 @@ namespace DotNetAssignment2
                 User user = this.state.Users.Where(u => string.Equals(u.Username, tbUsername.Text)).FirstOrDefault();
                 // Pass the user object to the TextEditor screen
                 TextEditor textEditor = new TextEditor(user);
-                textEditor.FormClosing += ShowLoginScreen;
+                textEditor.FormClosed += ShowLoginScreen;
                 textEditor.Show();
                 // Clear text fields
                 clearInputFields();
@@ -70,6 +70,10 @@ namespace DotNetAssignment2
             tbUsername.Focus();
         }
         private void ShowLoginScreen(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
+        }
+        private void ShowLoginScreen(object sender, FormClosedEventArgs e)
         {
             this.Show();
         }
