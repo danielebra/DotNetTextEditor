@@ -62,6 +62,8 @@
             this.rtbText = new System.Windows.Forms.RichTextBox();
             this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.tsTop.SuspendLayout();
             this.tsLeft.SuspendLayout();
@@ -84,8 +86,10 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
+            this.toolStripSeparator2,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.toolStripSeparator4,
             this.logoutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -95,31 +99,31 @@
             // 
             this.newToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.NewFile_16x;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.newToolStripMenuItem.Text = "New      (Ctrl+N)";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.tsbtnNew_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.OpenFolder_16x;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.openToolStripMenuItem.Text = "Open    (Ctrl+O)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.tsbtnOpen_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.Save_16x;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.saveToolStripMenuItem.Text = "Save      (Ctrl+S)";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.tsbtnSave_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.SaveAs_16x;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.tsbtnSaveAs_Click);
             // 
@@ -127,7 +131,7 @@
             // 
             this.logoutToolStripMenuItem.Image = global::DotNetAssignment2.Properties.Resources.ShutDown_16x;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -145,24 +149,24 @@
             // 
             this.tsmbtnCut.Image = global::DotNetAssignment2.Properties.Resources.Cut_16x;
             this.tsmbtnCut.Name = "tsmbtnCut";
-            this.tsmbtnCut.Size = new System.Drawing.Size(102, 22);
-            this.tsmbtnCut.Text = "Cut";
+            this.tsmbtnCut.Size = new System.Drawing.Size(157, 22);
+            this.tsmbtnCut.Text = "Cut       (Ctrl+X)";
             this.tsmbtnCut.Click += new System.EventHandler(this.tsbtnCut_Click);
             // 
             // tsmbtnCopy
             // 
             this.tsmbtnCopy.Image = global::DotNetAssignment2.Properties.Resources.Copy_16x;
             this.tsmbtnCopy.Name = "tsmbtnCopy";
-            this.tsmbtnCopy.Size = new System.Drawing.Size(102, 22);
-            this.tsmbtnCopy.Text = "Copy";
+            this.tsmbtnCopy.Size = new System.Drawing.Size(157, 22);
+            this.tsmbtnCopy.Text = "Copy    (Ctrl+C)";
             this.tsmbtnCopy.Click += new System.EventHandler(this.tsbtnCopy_Click);
             // 
             // tsmPaste
             // 
             this.tsmPaste.Image = global::DotNetAssignment2.Properties.Resources.Paste_16x;
             this.tsmPaste.Name = "tsmPaste";
-            this.tsmPaste.Size = new System.Drawing.Size(102, 22);
-            this.tsmPaste.Text = "Paste";
+            this.tsmPaste.Size = new System.Drawing.Size(157, 22);
+            this.tsmPaste.Text = "Paste    (Ctrl+V)";
             this.tsmPaste.Click += new System.EventHandler(this.tsbtnPaste_Click);
             // 
             // helpToolStripMenuItem
@@ -366,6 +370,16 @@
             // 
             this.sfd.Filter = "Rich Text File|*.rtf";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(157, 6);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(157, 6);
+            // 
             // TextEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,5 +441,7 @@
         private System.Windows.Forms.ToolStripButton tsbtnPaste;
         private System.Windows.Forms.OpenFileDialog ofd;
         private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

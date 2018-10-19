@@ -30,7 +30,45 @@ namespace DotNetAssignment2
             InitializeComponent();
             UserInstance = user;
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // I later realized that hotkeys are natively supported in the menu strip buttons...
+            // I will still keep and use this implementation.
 
+            // Handle file manipulation hotkeys
+            if (HotKeys.Save(keyData))
+            {
+                tsbtnSave_Click(this, null);
+                return true;
+            }
+            else if (HotKeys.Open(keyData))
+            {
+                tsbtnOpen_Click(this, null);
+                return true;
+            }
+            else if (HotKeys.New(keyData))
+            {
+                tsbtnNew_Click(this, null);
+                return true;
+            }
+            // Handle text manipulation hotkeys
+            else if (HotKeys.Cut(keyData))
+            {
+                tsbtnCut_Click(this, null);
+                return true;
+            }
+            else if (HotKeys.Copy(keyData))
+            {
+                tsbtnCopy_Click(this, null);
+                return true;
+            }
+            else if (HotKeys.Paste(keyData))
+            {
+                tsbtnPaste_Click(this, null);
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void TextEditor_Load(object sender, EventArgs e)
         {
             handleUserPerception();
@@ -142,14 +180,24 @@ namespace DotNetAssignment2
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Ask the user to confirm that they should be logged out
+            if (MessageBox.Show("Are you sure you want to logout?", "Confirm Logging Out",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void tsbtnNew_Click(object sender, EventArgs e)
         {
-            // Clear the editor
-            rtfFile = new RtfFile();
-            rtbText.Rtf = string.Empty;
+            // Ask the user to confirm that the text editor should be reset
+            if (MessageBox.Show("Are you sure you want to create a new file? Any unsaved changes will be lost.",
+                "Confirm New File", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // Clear the editor
+                rtfFile = new RtfFile();
+                rtbText.Rtf = string.Empty;
+            }
         }
     }
 }

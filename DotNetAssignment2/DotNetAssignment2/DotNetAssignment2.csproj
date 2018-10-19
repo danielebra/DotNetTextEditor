@@ -52,6 +52,7 @@
     <Compile Include="Classes\CustomEventArgs.cs" />
     <Compile Include="Classes\Exceptions.cs" />
     <Compile Include="Classes\FileManipulator.cs" />
+    <Compile Include="Classes\HotKeys.cs" />
     <Compile Include="Classes\RichTextBoxManipulator.cs" />
     <Compile Include="Classes\RtfFile.cs" />
     <Compile Include="Classes\State.cs" />
